@@ -1,0 +1,77 @@
+﻿@model List<RendezVous>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+             
+            </div>
+            <div class="card-body">
+                @{
+                    AlertModel? alert = ViewBag.AlertMessage == null ? null : (AlertModel)ViewBag.AlertMessage;
+                }
+                @if (alert != null)
+                {
+                    <div class="alert alert-@(!alert.isError ? "success" : "danger") alert-dismissible fade show">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>@(!alert.isError ? "Success!" : "Erreur!")</strong> @alert.Message.
+                    </div>
+                }
+
+                <div class="table-responsive">
+                    <table class="table table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th>Horraire</th>
+                                <th>Date</th>
+                                <th>Service Demandé</th>
+                                <th>Etat</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (RendezVous rv in Model)
+                            {
+
+                                <tr>
+
+                                    <td>@rv.Horraire</td>
+                                    <td>@rv.Date</td>
+                                    <td>@rv.services.NomS</td>
+                                    <td>@rv.Etat</td>
+                                    
+
+                                    <td width="350px">
+                                        <center>
+                                            <a href="/RendezVous/Annuler/@rv.Id" class="btn btn-rounded btn-warning">
+                                              
+                                                    
+                                               Annuler
+                                            </a>
+
+                                        
+                                            <a href="/RendezVous/Valider/@rv.Id" class="btn btn-rounded btn-success">
+
+
+                                                Valider
+                                            </a>
+                                            <a href="/RendezVous/Payement/@rv.Id" class="btn btn-rounded btn-info">
+                                                <span class="btn-icon-left text-info">
+                                                    <i class="fa fa-money color-info"></i>
+                                                </span>Payements
+                                            </a>
+
+                                        </center>
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

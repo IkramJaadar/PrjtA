@@ -1,0 +1,34 @@
+﻿@model Service
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Modifier un service</h4>
+    </div>
+    <div class="card-body">
+        <div class="basic-form">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger">
+                    <input type="hidden" asp-for="NumS" />
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                            <input type="text" class="form-control" asp-for="NomS" placeholder="Nom de Service">
+                            <span asp-validation-for="NomS" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6 mt-2 mt-sm-0">
+
+                            <input type="text" class="form-control" placeholder="Prix de Service" asp-for="Prix">
+                            <span asp-validation-for="Prix" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <br>
+                    <p>
+                        <button class="btn btn-primary" type="submit">Modifier</button>
+
+                    </p>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

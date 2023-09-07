@@ -1,0 +1,35 @@
+﻿@model Sliders
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Modifier slider</h4>
+    </div>
+    <div class="card-body">
+        <div class="basic-form">
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger">
+                    <input type="hidden" asp-for="Num" />
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                            <input type="text" class="form-control" asp-for="Contenu" placeholder="Contenu">
+                            <span asp-validation-for="Contenu" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6 mt-2 mt-sm-0">
+
+                            <input type="file" class="form-control" name="Fichier1">
+
+                        </div>
+
+                    </div>
+                    <br>
+                    <p>
+                        <button class="btn btn-primary" type="submit">Modifier</button>
+
+                    </p>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

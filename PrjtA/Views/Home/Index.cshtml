@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+    //Statistics Cards
+    int NbrServices = ViewBag.NbrServices == null ? 0 : (int)ViewBag.NbrServices;
+    int ClientsCount = ViewBag.ClientsCount == null ? 0 : (int)ViewBag.ClientsCount;
+    int NbrRendezvous = ViewBag.NbrRendezvous == null ? 0 : (int)ViewBag.NbrRendezvous;
+    int NbrRendezvousEncours = ViewBag.NbrRendezvousEncours == null ? 0 : (int)ViewBag.NbrRendezvousEncours;
+    int NbrRendezvousValide = ViewBag.NbrRendezvousValide == null ? 0 : (int)ViewBag.NbrRendezvousValide;
+    int NbrRendezvousAnnule = ViewBag.NbrRendezvousAnnule == null ? 0 : (int)ViewBag.NbrRendezvousAnnule;
+
+    float CAannee = ViewBag.CAannee == null ? 0 : (float)ViewBag.CAannee;
+    float CAtotal = ViewBag.CAtotal == null ? 0 : (float)ViewBag.CAtotal;
+    
+}
+
+<link href="~/css/mysheet.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-lg-3 col-sm-6">
+        <div class="box-card bg-blue">
+            <div class="inner">
+                <h3 class="text-secondary"> @NbrServices </h3>
+                <p> Nombre des Services </p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-cubes" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="box-card bg-orange">
+            <div class="inner">
+                <h3 class="text-secondary">@ClientsCount</h3>
+                <p> Nombre des Clients</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-users" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="box-card bg-neavy">
+            <div class="inner">
+                <h3 class="text-dark">@NbrRendezvous</h3>
+                <p>RendezVous</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="box-card bg-skyblue">
+            <div class="inner">
+                <h3 class="text-dark"> @NbrRendezvousEncours </h3>
+                <p> RendezVous En cours </p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="box-card bg-light">
+            <div class="inner">
+                <h3 class="text-secondary"> @NbrRendezvousValide </h3>
+                <p class="text-dark">  RendezVous Validés</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="box-card bg-white">
+            <div class="inner">
+                <h3 class="text-secondary"> @NbrRendezvousAnnule </h3>
+                <p class="text-dark"> RendezVous Annulés</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-download" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="box-card bg-red">
+            <div class="inner">
+                <h3 class="text-dark"> @CAannee Dh</h3>
+                <p>Chifre Affaire d'Année</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-upload" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="box-card bg-green">
+            <div class="inner">
+                <h3 class="text-dark"> @CAtotal Dh</h3>
+                <p>Total Revenu</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-money" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</div>

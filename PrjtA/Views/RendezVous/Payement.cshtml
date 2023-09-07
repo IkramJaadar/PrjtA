@@ -1,0 +1,30 @@
+﻿@model PrjtA.Models.Payement
+@{
+
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-3 col-form-label">Numéro de compte</label>
+            <div class="col-sm-12 col-md-7">
+                <strong>@Model.NumCompte</strong>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-3 col-form-label">Nom de Client</label>
+            <div class="col-sm-12 col-md-7">
+                <strong>@Model.NomClient</strong>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-3 col-form-label">Montant Payé</label>
+            <div class="col-sm-12 col-md-7">
+                <strong>@Model.Prix</strong>
+            </div>
+        </div>
+
+    </div>
+</div>

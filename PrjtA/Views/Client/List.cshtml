@@ -1,0 +1,58 @@
+﻿@model List<Client>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Liste des clients</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th>Num</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Telephone</th>
+                                <th>Email</th>
+                                 <th>Date Naissance</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Client client in Model)
+                            {
+                              
+                            <tr>
+                                
+                                    <td>@client.Id</td>
+                                    <td>@client.Nom</td>
+                                    <td>@client.Prenom</td>
+                                    <td>@client.Telephone</td>
+                                    <td>@client.Email</td>
+                                    <td>@client.DateNaissance</td>
+                       
+                                    <td>
+                                        <center>
+                                            <a href="/Client/Details/@client.Id" class="btn btn-rounded btn-info">
+                                                <span class="btn-icon-left text-info">
+                                                    <i class="fa fa-list-ul color-info"></i>
+                                                </span>Details
+                                            </a>
+                                           
+                                            </center>
+                                           
+                                </td>
+                               
+                            </tr>
+                            }
+                        </tbody>
+                            
+                    </table>
+                           
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    

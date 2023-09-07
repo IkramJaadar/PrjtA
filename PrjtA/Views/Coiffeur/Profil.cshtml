@@ -1,0 +1,45 @@
+﻿@model Coiffeur
+
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Hi, @Model.Nom @Model.Prenom</h4>
+                    <p class="mb-0">Bienvenu</p>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                   
+                    <li class="breadcrumb-item active"><a href="/Coiffeur/Profil">Profil</a></li>
+                </ol>
+            </div>
+        </div>
+<div class="row">
+<div class="col-md-12 col-sm-12">
+    <form method="post" action="/Coiffeur/ProfilePwd">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-5 col-form-label">Mot de Passe Actuel</label>
+            <div class="col-sm-12 col-md-7">
+                <input asp-for="Password" type="password" placeholder="Mot de Passe Actuel" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-5 col-form-label">Nouveau Mot de Passe</label>
+            <div class="col-sm-12 col-md-7">
+                <input asp-for="NouvPass" placeholder="Nouveau Mot de Passe" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-5 col-form-label">Confirmation Mot de Passe</label>
+            <div class="col-sm-12 col-md-7">
+                    <input asp-for="ConfPass" placeholder="Confirmation Mot de Passe" class="form-control" />
+            </div>
+        </div>
+        <p>
+            <button class="btn btn-primary" type="submit">Enregistrer</button>
+        </p>
+    </form>
+</div>
+    </div>
+
